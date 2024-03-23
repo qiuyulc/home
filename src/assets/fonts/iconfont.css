@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4478289 */
+  src: url('iconfont.woff2?t=1711101604380') format('woff2'),
+       url('iconfont.woff?t=1711101604380') format('woff'),
+       url('iconfont.ttf?t=1711101604380') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bokeyuan:before {
+  content: "\e603";
+}
+
+.icon-gerenziliao:before {
+  content: "\e62b";
+}
+
+.icon-react:before {
+  content: "\e68b";
+}
+
+.icon-electron:before {
+  content: "\eb86";
+}
+
+.icon-juejin:before {
+  content: "\e613";
+}
+
+.icon-github:before {
+  content: "\e657";
+}
+
+.icon-MyWeek:before {
+  content: "\e60a";
+}
+

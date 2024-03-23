@@ -1,0 +1,30 @@
+.swiper_item_box {
+  width: calc(100% + 20px);
+  height: 94%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+  //   overflow: hidden;
+}
+.swiper_item {
+  width: calc(33.33% - 20px);
+  height: calc((100% - 40px) / 2);
+  margin: 10px;
+  //   height: 50%;
+  box-sizing: border-box;
+
+  .item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i {
+      font-size: var(--font_size_0_8);
+      margin-right: 6px;
+    }
+    .name {
+      font-size: var(--font_size_0_6);
+    }
+  }
+}

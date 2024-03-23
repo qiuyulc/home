@@ -1,0 +1,11 @@
+@import url(./iconfont.css);
+@font-face {
+  font-family: "yfhct";
+  src: url("./yf.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "UnidreamLED";
+  src: url("./UnidreamLED.ttf");
+}
