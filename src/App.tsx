@@ -1,4 +1,10 @@
-import { LayoutImage, TimeCom, TextCom, SwiperCom } from "./components";
+import {
+  LayoutImage,
+  TimeCom,
+  TextCom,
+  SwiperCom,
+  UserCom,
+} from "./components";
 // 添加注释
 function App() {
   return (
@@ -17,6 +23,7 @@ function App() {
                 <SwiperCom></SwiperCom>
               </div>
             </div>
+            <UserCom></UserCom>
           </div>
           <div className="app_right background_b">未完待续。。。</div>
         </div>
