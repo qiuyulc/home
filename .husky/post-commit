@@ -14,4 +14,4 @@ branch=$(git branch --show-current)
 version_timeline="{ \"date\": \"$current_date\", \"author\": \"$author\", \"message\": \"$commit_message\", \"branch\": \"$branch\" }"
 
 # 保存为 JSON 文件
-echo $version_timeline > ../version_timeline.json
+echo $version_timeline > ./version_timeline.json
