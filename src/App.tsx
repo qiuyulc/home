@@ -18,7 +18,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="app_right background_b">暂时不知道放什么</div>
+          <div className="app_right background_b">未完待续。。。</div>
         </div>
       </LayoutImage>
     </>

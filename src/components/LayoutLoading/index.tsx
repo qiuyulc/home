@@ -17,7 +17,7 @@ export const LayoutLoading = forwardRef(
   ) => {
     const [top, setTop] = useState<string | number>(0);
     const handleClose = () => {
-      setTop("-100%");
+      setTop("-150%");
     };
 
     useImperativeHandle(ref, () => {
