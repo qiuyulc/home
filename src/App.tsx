@@ -4,6 +4,7 @@ import {
   TextCom,
   SwiperCom,
   UserCom,
+  MusicCom,
 } from "./components";
 // 添加注释
 function App() {
@@ -25,7 +26,9 @@ function App() {
             </div>
             <UserCom></UserCom>
           </div>
-          <div className="app_right background_b">未完待续。。。</div>
+          <div className="app_right">
+            <MusicCom></MusicCom>
+          </div>
         </div>
       </LayoutImage>
     </>

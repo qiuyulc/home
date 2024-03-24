@@ -3,6 +3,7 @@ export interface SwiperDataProps {
   icon: string;
   url: string;
   open: boolean;
+  open_key?: string;
 }
 
 export const swiperData: SwiperDataProps[] = [
@@ -11,6 +12,7 @@ export const swiperData: SwiperDataProps[] = [
     icon: "gerenziliao",
     url: "",
     open: false,
+    open_key: "resume",
   },
   {
     name: "github",
@@ -47,5 +49,12 @@ export const swiperData: SwiperDataProps[] = [
     icon: "react",
     open: true,
     url: "https://github.com/qiuyulc/react-vite-template",
+  },
+  {
+    name: "高清壁纸",
+    icon: "tupian",
+    open_key: "wallpaper",
+    open: false,
+    url: "",
   },
 ];

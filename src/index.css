@@ -107,8 +107,10 @@ img {
   /* background-color: #fff; */
   text-align: center;
   box-sizing: border-box;
-  padding: 6px;
+  /* padding: 6px; */
   font-size: 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 .app_left_time_text {

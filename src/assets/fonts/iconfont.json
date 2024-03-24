@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "12771494",
+      "name": "下载",
+      "font_class": "xiazai",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "658956",
+      "name": "图片",
+      "font_class": "tupian",
+      "unicode": "e67f",
+      "unicode_decimal": 59007
+    },
+    {
       "icon_id": "12473807",
       "name": "关闭",
       "font_class": "guanbi",
