@@ -1,3 +1,86 @@
 .music_com {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .music_top {
+    flex: 1;
+    height: 100%;
+    padding: 14px;
+    overflow: hidden;
+  }
+  .music_bom {
+    height: 80px;
+    flex-shrink: 0;
+    display: flex;
+    .img {
+      margin-left: 26px;
+      width: 80px;
+      height: 80px;
+      text-align: center;
+      position: relative;
+      flex-shrink: 0;
+      .img_icon {
+        transition: top 0.4s;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.4);
+        position: absolute;
+        top: -30px;
+        width: 74px;
+        height: 74px;
+        line-height: 74px;
+        font-size: var(--font_size_1_6);
+      }
+    }
+
+    .name {
+      height: 100%;
+      flex-grow: 1;
+      line-height: 80px;
+      padding: 0 16px;
+      box-sizing: border-box;
+      text-align: left;
+    }
+
+    .switch {
+      margin-right: 26px;
+      width: 80px;
+      height: 80px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      .icon {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: var(--font_size_1);
+      }
+    }
+  }
+  .music_list {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 16px 0;
+    box-sizing: border-box;
+    .list_item {
+      padding: 4px 6px;
+      display: flex;
+      height: 40px;
+      line-height: 40px;
+      align-items: center;
+      cursor: pointer;
+      .music_img_pic {
+        width: 30px;
+        height: 30px;
+        margin-right: 16px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .music_name {
+        font-size: var(--font_size_0_6);
+      }
+    }
+  }
 }
