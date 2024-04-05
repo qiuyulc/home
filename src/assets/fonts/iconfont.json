@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1131521",
+      "name": "加载",
+      "font_class": "jiazai",
+      "unicode": "e637",
+      "unicode_decimal": 58935
+    },
+    {
+      "icon_id": "5387531",
+      "name": "加载_双",
+      "font_class": "jiazai_shuang",
+      "unicode": "eaf4",
+      "unicode_decimal": 60148
+    },
+    {
+      "icon_id": "9447889",
+      "name": "暂停",
+      "font_class": "zanting",
+      "unicode": "e669",
+      "unicode_decimal": 58985
+    },
+    {
       "icon_id": "690684",
       "name": "YDUI-上一曲",
       "font_class": "yduishangyiqu",
