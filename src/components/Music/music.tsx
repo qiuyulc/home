@@ -3,7 +3,8 @@ import {Play} from './useMusicReducer'
 type MusicItemProps = {
   url?: string;
   handleCurrentPlay: (data: Play) => void;
-  play:Play
+  play:Play;
+  handleEnded:()=>void
 };
 
 export type AudioRef = {
@@ -13,7 +14,7 @@ export type AudioRef = {
 };
 
 const MusicItem = forwardRef((props: MusicItemProps, ref) => {
-  const { url ,handleCurrentPlay,play} = props;
+  const { url ,handleCurrentPlay,play,handleEnded} = props;
   const audio = useRef<HTMLAudioElement>(null);
 
   const handlePlay = () => { // 将函数定义移动到 useImperativeHandle 调用之前
@@ -38,8 +39,11 @@ const MusicItem = forwardRef((props: MusicItemProps, ref) => {
     }
   },[play])
 
-  return <audio ref={audio} onCanPlay={()=>{
+  return <audio onEnded={()=>{
+    // console.log('播放结束')
+    handleEnded()
+  }} ref={audio} onCanPlay={()=>{
     handleCurrentPlay(true)
-  }} src={url}></audio>;
+  }}  src={url}></audio>;
 });
 export default MusicItem;

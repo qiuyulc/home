@@ -4,6 +4,7 @@ import { getMusic, MusicProps } from "../../api/index";
 import { useCallback, useEffect, useMemo, useRef } from "react";
 import useMusicReducer from "./useMusicReducer";
 import { message } from "../ui";
+
 export const MusicCom = () => {
   const music = useRef<AudioRef>(null);
   const { state, initMusicList, handleDisplay, handleCurrentMusic,handleCurrentPlay } =
@@ -19,7 +20,17 @@ export const MusicCom = () => {
   const handleClick = useCallback((data: MusicProps) => {
     handleCurrentPlay('loading')
     handleCurrentMusic(data);
-  }, []);
+  }, [handleCurrentMusic, handleCurrentPlay]);
+
+  const handleEnded = useCallback(()=>{
+    handleCurrentPlay('loading');
+    const index = music_list.findIndex(u=>u.title === current_music?.title)
+    if(index+1===music_list.length){
+      handleCurrentMusic(music_list[0])
+    }else{
+      handleCurrentMusic(music_list[index+1])
+    }
+  },[current_music?.title, handleCurrentMusic, handleCurrentPlay, music_list])
 
   useEffect(() => {
     if (music.current && current_music) { 
@@ -66,8 +77,8 @@ export const MusicCom = () => {
   },[play,handleCurrentPlay,current_music])
 
   const music_player = useMemo(() => {
-    return <MusicItem handleCurrentPlay={handleCurrentPlay} play={play} url={current_music?.url} ref={music}></MusicItem>;
-  }, [current_music?.url,play,handleCurrentPlay]);
+    return <MusicItem handleEnded={handleEnded} handleCurrentPlay={handleCurrentPlay} play={play} url={current_music?.url} ref={music}></MusicItem>;
+  }, [handleEnded, handleCurrentPlay, play, current_music?.url]);
 
   const top = useMemo(() => {
     return display ? 2 : -30;
