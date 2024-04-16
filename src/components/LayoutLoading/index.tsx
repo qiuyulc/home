@@ -35,12 +35,12 @@ export const LayoutLoading = forwardRef(
           <span></span>
           <span></span>
         </div>
-        <div className={`${styles.loading_text} font_yjhct`}>加载中....</div>
-        <div
-          className={`${styles.loading_text} ${styles.loading_name_text} font_yjhct`}
+        <div className={`${styles.loading_text}`}>加载中....</div>
+        {/* <div
+          className={`${styles.loading_text} ${styles.loading_name_text}`}
         >
           秋水先生的个人主页
-        </div>
+        </div> */}
       </div>
     );
   }
