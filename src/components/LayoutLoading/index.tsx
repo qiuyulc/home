@@ -26,7 +26,7 @@ export const LayoutLoading = forwardRef(
     return (
       <div
         className={`${styles.layoutLoading} ${className}`}
-        style={{ top }}
+        style={{ transform: `translateY(${top})` }}
         {...props}
       >
         <div className={styles.loading_box}>

@@ -100,7 +100,7 @@ const renderMessage = () => {
     elementChildren.map((u, i) => {
       return createElement(MessageCom, {
         key: i,
-        style: { top: i * 10 },
+        style: { transform: `translateY(${i * 10})` },
         ...u,
       });
     })
