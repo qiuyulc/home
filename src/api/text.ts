@@ -2,6 +2,6 @@ import AxiosRequest from "../utils/request";
 
 export const getMusicTitle = async () => {
   return AxiosRequest({
-    url: "https://v1.hitokoto.cn/",
+    url: "https://api.btstu.cn/yan/api.php?charset=utf-8&encode=json",
   });
 };

@@ -4,17 +4,18 @@ import { getDate, getTime } from "../../utils/time";
 import { getWeather, WeatherProps } from "../../api/index";
 
 export const TimeCom = ({ className }: ComponentProps<"div">) => {
-  const [timeState, setTimeState] = useState<string | null>(null);
+  const [timeState, setTimeState] = useState<string | null>(getTime());
   const [weather, setWeather] = useState<WeatherProps["result"]>();
+
   useEffect(() => {
-    const time = setTimeout(() => {
+    const interval = setInterval(() => {
       setTimeState(getTime());
     }, 1000);
 
     return () => {
-      clearTimeout(time);
+      clearInterval(interval);
     };
-  }, [timeState]);
+  }, []);
 
   useEffect(() => {
     getWeather().then((res: WeatherProps) => {

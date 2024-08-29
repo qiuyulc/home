@@ -36,7 +36,11 @@ export const LayoutImage = ({
           <img
             ref={imgRef}
             onLoad={loadImage}
-            src={"https://api.aixiaowai.cn/gqapi/gqapi.php"}
+            onError={(err)=>{
+              console.log(err)
+              setIsLoading(true);
+            }}
+            src={"https://api.btstu.cn/sjbz/api.php?lx=fengjing&format=images"}
             alt=""
           />
           <div className={styles.mask}></div>
