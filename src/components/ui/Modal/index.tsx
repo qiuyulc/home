@@ -8,10 +8,12 @@ export interface ModaleProps {
   onClose?: () => void;
   children?: ReactNode;
   modalStyle?: CSSProperties;
+  className?: string;
+  turnOffAnimation?: boolean;
 }
 
 export const ModaleCom = (props: ModaleProps) => {
-  const { open, title, onClose, children, modalStyle } = props;
+  const { open, title, onClose, children, modalStyle,className,turnOffAnimation=false } = props;
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -21,6 +23,9 @@ export const ModaleCom = (props: ModaleProps) => {
   }, [open]);
 
   const handleClose = () => {
+    if(turnOffAnimation){
+      setVisible(false);
+    }
     onClose?.();
   };
 
@@ -32,17 +37,17 @@ export const ModaleCom = (props: ModaleProps) => {
   };
   return visible
     ? createPortal(
-        <div className={`${styles.modale_com}`}>
+        <div className={`${styles.modale_com} ${className}`}>
           <div
             onAnimationEnd={handleAnimationEnd}
             style={{ position: "absolute", width: "100%", height: "100%" }}
-            className={`animate__animated ${
+            className={!turnOffAnimation?`animate__animated ${
               open ? " animate__backInLeft" : "animate__backOutRight"
-            }`}
+            }`:''}
           >
             <div
               style={{ ...modalStyle }}
-              className={`${styles.modale} background_b`}
+              className={`${styles.modale}  background_b`}
             >
               <div className={styles.modale_top}>
                 <h3 className={styles.modale_title}>{title || "弹窗标题"}</h3>

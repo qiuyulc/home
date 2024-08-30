@@ -47,7 +47,7 @@ export const LayoutImage = ({
         </div>
       </div>
       {children}
-      <LayoutLoading ref={loadingRef} />
+      {/* <LayoutLoading ref={loadingRef} /> */}
     </>
   );
 };
