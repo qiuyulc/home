@@ -5,7 +5,7 @@ import { getMusic, MusicProps } from "../../api/index";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import useMusicReducer from "./useMusicReducer";
 import { message } from "../ui";
-import MusicPlayer from './music_player'
+import MusicPlayer from "./music_player";
 export const MusicCom = () => {
   const music = useRef<AudioRef>(null);
   const {
@@ -45,8 +45,26 @@ export const MusicCom = () => {
     }
   }, [current_music?.title, handleCurrentMusic, handleCurrentPlay, music_list]);
 
+  const handlePreviousSong = () => {
+    handleCurrentPlay("loading");
+    const index = music_list.findIndex((u) => u.title === current_music?.title);
+    if (index === 0) {
+      handleCurrentMusic(music_list[music_list.length - 1]);
+    } else {
+      handleCurrentMusic(music_list[index - 1]);
+    }
+  };
+
+  const handlePopPeople = () => {
+    handleCurrentPlay("loading");
+    const index = music_list.findIndex((u) => u.title === current_music?.title);
+    if (index + 1 === music_list.length) {
+      handleCurrentMusic(music_list[0]);
+    } else {
+      handleCurrentMusic(music_list[index + 1]);
+    }
+  };
   const onClose = () => {
-    console.log(222)
     setModale({ ...modale, open: false });
   };
 
@@ -154,7 +172,7 @@ export const MusicCom = () => {
           <i
             className={`${styles.icon} iconfont icon-fangda`}
             onClick={() => {
-              setModale({...modale, open: true});
+              setModale({ ...modale, open: true });
             }}
           ></i>
           <i
@@ -165,10 +183,24 @@ export const MusicCom = () => {
       </div>
       {music_player}
       <ModaleCom
-        {...{ ...modale,className:styles.music_enlarged_box, turnOffAnimation:true,modalStyle: { height: "100%",width:'100%' }, onClose: onClose }}
+        {...{
+          ...modale,
+          className: styles.music_enlarged_box,
+          turnOffAnimation: true,
+          modalStyle: { height: "100%", width: "100%" },
+          onClose: onClose,
+        }}
       >
         <div className={styles.music_enlarged}>
-          <MusicPlayer/>
+          <MusicPlayer
+          handleCurrentPlay={handleCurrentPlay}
+            handlePreviousSong={handlePreviousSong}
+            handlePopPeople={handlePopPeople}
+            music_list={music_list}
+            play={play}
+            current_music={current_music}
+            audio={music.current?.audio}
+          />
         </div>
       </ModaleCom>
     </div>

@@ -3,7 +3,7 @@ import { MusicProps } from "../../api/index";
 
 export type Play = boolean | "loading";
 
-type Music = {
+export type Music = {
   music_list: MusicProps[];
   display: boolean;
   current_music: MusicProps | null;
