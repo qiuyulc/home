@@ -11,8 +11,8 @@ window.onload = function () {
       const img = new Image();
       // console.log(imgs[name]())
       imgs[name]().then((res) => {
-        console.log(res, 1);
-        img.src = (res as ImageModule).default;
+        const img_src = (res as ImageModule).default.replace("?import", "");
+        img.src = img_src;
       });
       // img.src = imgs[name]();
     }
